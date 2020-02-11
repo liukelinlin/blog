@@ -6,4 +6,4 @@ permalink: /about/
 
 # Life is short, have fun!
 
-![Robot-Human](https://liukelinlin.github.io/images/about-robot.jpg)
+![Robot-Human](https://liukelinlin.github.io/images/about-robot.jpeg)
