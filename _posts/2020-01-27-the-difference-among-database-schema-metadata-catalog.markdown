@@ -20,11 +20,11 @@ drop schema my_db;
 ```
 
 `Metadata` is the data about data. For example, typical metadata include:
-    - title
-    - categories
-    - author
-    - datetime
-    
+- title
+- categories
+- author
+- datetime
+ 
 
 `Catalog` is not used in MySQL, which is like a grouping of schemas. MySQL uses `INFORMATION_SCHEMA` to represent catalog concept. It can be used to query tables or other information in any schema.
 
