@@ -24,7 +24,7 @@ github_username:  liukelinlin
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-cayman
+theme: minimal
 plugins:
   - jekyll-feed
 
