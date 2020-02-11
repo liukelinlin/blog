@@ -1,1 +1,1 @@
-# blog
+# Lab x Technology
