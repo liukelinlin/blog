@@ -1,1 +1,1 @@
-# Lab x Technology
+# Life is short, have fun!
