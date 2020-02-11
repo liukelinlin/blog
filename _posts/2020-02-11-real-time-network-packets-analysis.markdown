@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Real-time network packets analysis by Wireshar + Kafka + Spark"
+title:  "Real-time network packets analysis by Wireshark + Kafka + Spark"
 date:   2020-02-11 16:21:17 -0500
 categories: Media
 ---
@@ -11,15 +11,15 @@ The blog designs a pipeline to analyze network packets with the consideration of
 Wireshark is the world’s foremost and widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level.
 
 Kafka is used for building real-time data pipelines and streaming apps. It is horizontally scalable, fault-tolerant, wicked fast.
-![Preview1](./images/kafka-flow.jpg)
+![Kafka workflow](https://liukelinlin.github.io/images/kafka-flow.jpg)
 
 Spark is a unified analytics engine for large-scale data processing. Spark Streaming is an extension of the core Spark API that enables scalable, high-throughput, fault-tolerant stream processing of live data streams.
-![Preview2](./images/spark-modules.jpg)
+![Spark architecture](https://liukelinlin.github.io/images/spark-modules.jpg)
 
 #2. Architecture & Dataflow
 
 The architecture is implemented as follow:
-![Preview3](./images/streaming-arch.jpg)
+![Streaming workflow](https://liukelinlin.github.io/images/streaming-arch.jpg)
 
 Dataflow can simply describe as:
 
@@ -88,21 +88,13 @@ if __name__=="__main__":
     lines.pprint()
     ssc.start()
     ssc.awaitTermination()
-
-
-
-"""
-bin/spark-submit 
-  --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.3.2 pystreaming.py demo2 
-  --master spark://localhost:4040
-"""
 ```
 
-Run pystreaming.py
+And run pystreaming.py
 ```bash
 pip install pyspark
 python pystreaming.py demo2
 ```
 
 ##3.4 Show live streaming result
-![Preview4](./images/streaming-ip-result.jpg)
+![Streaming live result](https://liukelinlin.github.io/images/streaming-ip-result.jpg)
