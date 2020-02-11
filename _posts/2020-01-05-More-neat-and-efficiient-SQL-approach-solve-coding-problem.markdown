@@ -4,7 +4,7 @@ title:  "More neat and efficient SQL approaches to solve coding problem"
 date:   2020-01-05 14:21:17 -0500
 categories: Database
 ---
-1. Show the 1984 winners and subject ordered by subject and winner name, but list Chemistry and Physics last. Data set table "noble" looks like:
+- Show the 1984 winners and subject ordered by subject and winner name, but list Chemistry and Physics last. Data set table "noble" looks like:
 
 ![noble-data](https://liukelinlin.github.io/images/noble-data.jpg)
 
@@ -23,7 +23,7 @@ where yr = 1984
 order by subject in ("Chemistry", "Physics"), subject, winner
 ```
 
-2. List each continent and the name of the country that comes first alphabetically. Table "world" as follow: 
+- List each continent and the name of the country that comes first alphabetically. Table "world" as follow: 
 
 ![continent-data](https://liukelinlin.github.io/images/continent-data.jpg)
 
@@ -35,7 +35,7 @@ FROM world x
 where name <= ALL(SELECT name FROM world y WHERE x.continent = y.continent)
 ```
 
-3. List odd rows in a table without auto-increment id in MySQL:
+- List odd rows in a table without auto-increment id in MySQL:
 
 ![odd-data](https://liukelinlin.github.io/images/oddrows-data.jpg)
 
@@ -48,11 +48,11 @@ select @i:=@i+1 as id, col, test from nothing
 where tmp.id%2 <>0;
 ```
 
-4. List employee based on salary desc order and department.
+- List employee based on salary desc order and department.
 
 ![sql](https://liukelinlin.github.io/images/employee-data.jpg)
 
-5. Delete duplicate rows and only keep one.
+- Delete duplicate rows and only keep one.
 
 ```
 delete p1 from person p1
