@@ -24,22 +24,22 @@ The architecture is implemented as follow:
 
 ![Streaming workflow](https://liukelinlin.github.io/images/streaming-arch.jpg)
 
-Dataflow can simply describe as:
+`Dataflow` can simply describe as:
 
-** Wireshark (Tshark log) -> Kafka (Topic) -> Spark Streaming -> result (source IP, destination IP). **
+**Wireshark (Tshark log) -> Kafka (Topic) -> Spark Streaming -> result (source IP, destination IP).**
 
 After getting the live result, it is up to you where to store them. We will display the result for demo convenience.
 
 # 3. Implementation
 
-## 3.1 Wireshark (Tshark analyzing log)
+# 3.1 Wireshark (Tshark analyzing log)
 ```bash
 >tshark -i en0 >>/tmp/en0.log
 Capturing on 'Wi-Fi: en0'
 865 
 ```
 
-## 3.2 Kafka(kafka_2.12-2.4.0) setup
+# 3.2 Kafka(kafka_2.12-2.4.0) setup
 ```bash
 #start zookeeper
 bin/zookeeper-server-start.sh config/zookeeper.properties
@@ -54,7 +54,7 @@ bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-fac
 bin/connect-standalone.sh config/connect-standalone.properties ../connect-file-source.properties
 ```
 
-## 3.3 Spark Streaming(spark-2.4.4-bin-hadoop2.7)
+# 3.3 Spark Streaming(spark-2.4.4-bin-hadoop2.7)
 
 Streaming code by python (pystreaming.py):
 
@@ -101,6 +101,6 @@ pip install pyspark
 python pystreaming.py demo2
 ```
 
-## 3.4 Finally show live streaming result.
+# 3.4 Finally show live streaming result.
 
 ![Streaming live result](https://liukelinlin.github.io/images/streaming-ip-result.jpg)
