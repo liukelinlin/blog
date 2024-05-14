@@ -15,13 +15,16 @@ In a shopping site,  user will signup with their dob, gender, city etc, then a s
 * user's behaviour: searches, views, favourites
 
 After ETL, a user's profile data looks like:
+
 | id   | age | gender | city | searches | views | favourites |
 | -------- | ------- | ------- | ------- | ------- | ------- | ------- |
 | 12345  | 36    |  1 | 16 | 25 | 198 | 3 |
 | 12346  | 29    |  2 | 29 | 102 | 256 | 12 |
 
 # 2. Sampled users based on paid user or not(binary classification). Sampling:
+
 |Total	| Paid	| Unpaid |
+| -------- | ------- | ------- |
 | 20k	| 8k	| 12k |
 
 # 3. Data modeling and prediction
@@ -45,4 +48,4 @@ val rf = new RandomForestClassifier()
     predictions.select("predictedLabel", "label", "features").show(5)
 ```
 
-# Result: validated prediction on test dataset, it got ~90% correctness.
+Validated prediction on test dataset, it got ~90% accuracy.
